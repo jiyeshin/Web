@@ -1,0 +1,13 @@
+
+h3{color:blue}
+
+.article, #atid{color:green;}
+.sample{color:red}
+
+h3:hover{color:gray;}
+h3:active{color: yellow;}
+h4{
+	color: red;
+	font-size:100px;
+	text-shadow: 10px 10px #cccc99, 20px 20px blue;
+}
