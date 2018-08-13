@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>CSS-3D</title>
+<style>
+
+@-webkit-keyframes spin{
+	from{-webkit-transform:rotatex(0deg);}
+	to{-webkit-transform:rotatex(360deg);}
+}
+
+#spinner{
+-webkit-animation-name:spin;
+-webkit-animation-timing-function:linear;
+-webkit-animation-iteration-count:infinite;
+-webkit-animation-duration:6.0s;
+-webkit-transform-style:preserve-3d
+
+}
+
+#spinner:hover{
+-webkit-animation-play-state:paused;
+}
+
+
+#stage{
+
+}
+
+</style>
+</head>
+<body>
+
+<div id='stage' style='background-color:#D1B2FF'>
+<p id='spinner' style='background-color:#5D1EB7; text-align:center; color:white'>
+3D animation </p>
+</div>
+
+
+
+
+
+
+
+
+</body>
+</html>
