@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>사용자 정의 함수  </title>
+</head>
+<body>
+
+<input type='button' value='버튼 '
+id='btn' />
+<br/>
+
+</body>
+<script>
+//함수 정의 
+
+function disp(){
+document.writeln("Hello<br/>")
+}
+
+//함수 호출 
+disp()
+
+var print = function(){
+	document.writeln("Function<br/>")
+}
+
+print()
+print
+//alert(print) //print()를 안하면 저장한 내용을 가져옴. 
+
+//2개의 매개변수를 받아서 2개의 합을 리턴하는 메소드 
+var add = function(n1, n2){
+	//return n1+n2
+	
+	//자바스크립트는 매개변수를 내부적으로 arguments라는 배열에 순서대로 저장함. 
+	return arguments[0] + arguments[1]
+}
+
+var result = add(10,30)
+document.writeln("결과는 " + result + "<br/>")
+
+//callback function
+document.getElementById('btn').onclick=function(){
+	alert('버튼을 눌렀습니다. ')
+}
+
+//closer : 함수 안에 함수 
+var outer= function(){
+	var i =10
+	return function(){
+		i=i+1
+		document.writeln(i)
+	}
+}
+
+var k = outer()
+k()
+k()
+
+//내용을 입력 받아서 입력 받은 이름을 화면에 출력
+var msg = prompt('메시지창', '내용을 입력하시오 ')
+document.writeln('<br/>'+msg)
+
+
+
+</script>
+
+</html>

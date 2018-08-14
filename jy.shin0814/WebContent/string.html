@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>I문자열 </title>
+</head>
+<body>
+
+</body>
+<script>
+var str="Hello hahahaha"
+//문자열의 각 문자를 1개씩 출력 
+var i=0
+while(i<str.length){
+	document.writeln(str.charAt(i)+"<br/>")
+	i=i+1
+}
+
+//문자의 존재여부 - indexOf, lastIndexOf 
+document.writeln(str.indexOf("o")+"<br/>")
+document.writeln(str.lastIndexOf("l")+"<br/>")
+document.writeln(str.indexOf("k")+"<br/>")
+
+
+//str 을 공백  기준으로 분리해서 출력. hello world 출
+var ap = str.split(" ")
+i=0
+for(i in ap){
+	document.writeln(ap[i]+"<br/>")
+}
+
+
+//앞의 3글자만 가져와서 출력 
+document.writeln(str.substring(0,3)+"<br/>")
+
+
+//trim, toUpperCase, toLowerCase 의 기능 => 조회할 때 중요 
+
+
+
+
+</script>
+
+</html>
