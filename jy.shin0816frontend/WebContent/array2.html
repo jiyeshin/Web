@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>객체 배열 생성과 사용 </title>
+</head>
+<body>
+
+</body>
+<script>
+//이름과 나이를 갖는 객체를 생성할 수 있는 생성자 함수 
+function Person(name, age){
+	//this를 사용해서 속성을 생성하면 인스턴스 속성이 됨. 
+	this.name=name
+	this.age=age
+	
+	this.toString=function(){
+		return this.name + ": " + this.age
+	}
+}
+
+//배열을 생성 
+var stars = [new Person('고건태', 24), new Person('김상균', 24), new Person('김동한', 21), 
+	new Person('노태현', 26), new Person('권현빈', 22), new Person('김용국', 23)]
+
+//이름의 오름 차순  //문자는 크기비교, 숫자는 뺼셈. 
+/*
+stars.sort(function(left, right){
+	if(left.name>right.name) return 1
+	else if(left.name==right.name) return 0
+	else return -1
+})
+*/
+
+//이름의 오름차순 정렬 함수 
+var nameAsc=function(left, right){
+	if(left.name>right.name) return 1
+	else if(left.name==right.name) return 0
+	else return -1
+}
+
+//이름의 내림차순 정렬 함수 
+var nameDesc=function(left, right){
+	if(left.name>right.name) return -1
+	else if(left.name==right.name) return 0
+	else return 1
+}
+	
+
+//나이의 오름차순 정렬 함수 
+var ageAsc=function(left, right){
+	return left.age-right.age
+}
+	
+//나이의 내림차순 정렬 함수 
+var ageDesc=function(left, right){
+	return right.age - left.age
+}
+
+//하나의 숫자를 입력 받아서 정렬해서 출력 
+//1이면 이름의 오름차순, 2이면 이름의 내림차순,
+// 3이면 나이의 오름차순, 4이면 나이의 내림차순 
+
+/*
+var input=prompt('정렬 방법 선택 ')
+switch(input){
+case '1': 
+	stars.sort(nameAsc)
+	break
+	
+case '2': 
+	stars.sort(nameDesc)
+	break
+	
+case '3': 
+	stars.sort(ageAsc)
+	break
+	
+case '4': 
+	stars.sort(ageDesc)
+	break
+	
+}
+
+
+for(idx in stars){
+	document.writeln(stars[idx]+'<br/>')
+}
+*/
+
+//slice는 시작 위치와 마지막 바로 뒤 위치를 받아서 배열을 만들어주는 함수 
+//slice(2,3) 하면 두번째부터 세번째 앞까지의 배열이므로 1개만 나옴 
+var temp=stars.slice(2,3)
+for(idx in temp){ 
+	document.writeln(stars[idx]+'<br/>')
+}
+	
+	
+</script>
+
+</html>

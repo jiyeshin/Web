@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>배열 관련 함수</title>
+</head>
+<body>
+
+</body>
+<script>
+
+/*
+var ar=['아메리', null, '아바라','카마','화초모', '플렛화이트', '카푸치노']
+
+var first = ar.slice(2,4)
+document.write(first + '<br/>')
+
+
+result=ar.map(function(maegae){
+	if(maegae==null) maegae='이름 없음 '
+	return maegae
+})
+alert(result)
+
+
+//filter는 매개변수가 1개이고 boolean을 리턴하는 함수 
+//매개변수를 받아서 true를 리턴하는 내용만 가지고 새로운 배열을 만들어서 리턴함. 
+var result=ar.filter(function(maegae){ // ar. 로 하면 에러남. null 값에 데이터를 넣은 것은 ar이 아니라 result 이기 때문. 
+	return maegae.length>=4 //4글자 이상인 데이터만 추출 
+})
+document.write(result+ '<br/>')
+
+
+
+//map은 리턴되는 데이터를 가지고 배열을 새로 생성 
+result=ar.map(function(maegae){
+	return maegae.length
+})
+
+document.write(result+ '<br/>')
+*/
+
+//JSON
+var json='["가나다", "마바사", "아자차"]'
+json='{"language":"java", "db":"oracle"}'
+result=JSON.parse(json)
+for(idx in result){
+	document.writeln(idx+": "+result[idx]+"<br/>")
+}
+
+//팝업창 
+window.open('https://www.google.co.kr', '구글', 'width=400, height=100, resizable=no')
+
+</script>
+</html>

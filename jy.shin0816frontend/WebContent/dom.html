@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<form>
+<div id='msg'></div> <!--따로 닫는 태그가 있는 태그들은 태그 안에 내용을 삽입하거나 가져올 수 있음. 이 때 사용하는 속성이 innerHTML.  -->
+
+<!--id는 페이지 내에서 구분하기 위한 속성 
+name은 서버에게 전송할 때 구분하기 위한 속성 
+ -->
+이메일: <input type='text' id='email' name='email'/>
+<br/>
+비밀번호: <input type='password' id='pw' name='pw'/>
+<br/>
+비밀번호 확인: <input type='password' id='pw1' />
+<br/>
+이름: <input type='text' id='name' name='name'/>
+<br/>
+<input type='submit' value='회원가입' />
+<input type='button' value='메인으로'  id='btn'/>
+
+</form>
+</body>
+<script>
+//입력된 값을 가져오거나 설정하고자 할 때 value를 사용 
+document.getElementById('email').value='abcd123'
+
+//닫는 태그가 있는 태그들은 태그 안에 내용을 삽입하거나 가져올 수 있음. 스타일도 지정할 수 있음. 
+document.getElementById('msg').innerHTML = '안녕하세요 <br/> dom 공부하고 있습니다. '
+document.getElementById('msg').style.color='blue'
+	
+/*	
+//전통적인 이벤트 처리 방식 
+document.getElementById('btn').onclick=function(){
+	location.href='index.html'
+}
+*/
+
+/*
+//표준 이벤트 처리 방식  <-권장. 계속 쓰면 추가되기 때문. 전통적인 방식은 추가가 안됨. 
+document.getElementById('btn').addEventListener(
+		'click', function(){
+			alert('표준 이벤트 처리')
+		});
+*/
+
+//이벤트에 대한 정보 넘겨 받기 
+document.getElementById('btn').addEventListener(
+		'click', function(e){
+			//이벤트 객체 가져오기 
+			var event = e||window.event 
+			//이벤트가 발생한 버튼의 id 출력 
+			//alert(event.target.id)
+			
+			//버튼의 글자 바뀜 
+			alert(event.target.value='바뀜')
+		});
+
+for(attr in document.getElementById('btn')){
+	document.writeln(attr)
+}
+		
+</script>
+</html>
