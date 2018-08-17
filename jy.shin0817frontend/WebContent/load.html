@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>window.onload</title>
+<script>
+//window가 모든 태그를 읽어서 메모리에 적재하고 난 후 수행 
+window.onlaod=function(){
+	//정규식 객체 생성 
+	var reg = /iphone/
+	//문자열 
+	var str="iphone은 스티브 잡스의 아이디어 입니다."
+	if(reg.test(str))
+		document.getElementById('msg').innerHTML='iphone이 존재합니다.'
+	else
+		document.getElementById('msg').innerHTML='iphone이 존재하지 않니다.'
+
+
+var csv='가나다, 마바사 '
+//콤마를 기준으로 분할 
+var ar=csv.split(/,/)
+for(idx in ar){
+	document.writeln(ar[idx])
+}
+//치환 
+var result=csv.replace(/,/,'-$&-')
+alert(result) //문자열은 바로 출력 못하고 변수에 넣고 출력해야 함. 
+document.getElementById('msg').innerHTML +=" 않습니다. "
+
+//숫자가 있는지 확인 
+reg=/[0-9]/
+var str1='djdkdkd5kdkdkdk'
+var str2='dkfdksdk'
+//alert(reg.test(str1))
+//alert(reg.test(str2))
+
+reg=/^[a-zA-Z_$]/
+	var str1='djdkdkd5kdkdkdk'
+	var str2='1dkfdksdk'
+	alert(reg.test(str1))
+	alert(reg.test(str2))
+
+}
+
+</script>
+</head>
+<body>
+<div id='msg'> iphone이 존재합니다. 않습니다. </div>
+</body>
+</html>
