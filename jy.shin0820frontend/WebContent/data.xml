@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data>
+	<mem>
+		<name> 가나다 </name>
+		<part> 영업 </part>
+	</mem>
+	<mem>
+		<name> 마바사 </name>
+		<part> 회계  </part>
+	</mem>
+		<mem>
+		<name> 아자차 </name>
+		<part> 영업 </part>
+	</mem>
+		<mem>
+		<name> 가가가 </name>
+		<part> 엠디 </part>
+	</mem>
+
+
+</data>
