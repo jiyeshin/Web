@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>캔버스 선 스타일</title>
+</head>
+<body>
+	<canvas id='canvas' width='3000' height='1000'></canvas>
+</body>
+<script>
+	//canvas라는 id를 가진 객체 찾아오기 
+	var canvas = document.getElementById('canvas')
+	//그래픽을 풀력하는 작업을 할 때는 그래픽을 출력하기 위한 기본정보를 저장하는 context객체를 만들어야 함 
+	var context = canvas.getContext('2d')
+	
+	//Image 객체를 생성 
+	var img = new Image()
+	img.src='http://recipe1.ezmember.co.kr/cache/recipe/2015/09/07/4bacbba7b553c3e219752370ec5b19fa.jpg'
+	
+	//Image객체는 비동기적으로 이미지를 읽어오기 때문에 처리하는 코드는 콜백 메소드에 작성해야 함. 
+	img.addEventListener('load', function(e){
+		var event = e || window.event //발생한 이벤트에 대한 정보를 저장한 객체 가져오기 
+		
+		//패턴 생성 
+		var p = context.createPattern(img, 'repeat')
+		//패턴을 면 색으로 지정 
+		context.fillStyle=p
+		//면을 채우는 사각형 그리기 
+		context.fillRect(1,1,3000,1000)
+	})
+	
+	
+</script>
+</html>
