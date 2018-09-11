@@ -1,6 +1,8 @@
 package dao;
 
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
@@ -96,6 +98,31 @@ public class PdsDAOImpl implements PdsDAO {
 			close();
 		}
 		return result;
+	}
+
+	@Override
+	public List<Pds> listPds() {
+		List<Pds> list = new ArrayList<Pds>();
+		try {
+			connect();
+			pstmt=con.prepareStatement("select * from pds order by code");
+			rs=pstmt.executeQuery();
+			while(rs.next()) {
+				Pds pds = new Pds();
+				pds.setCode(rs.getInt("code"));
+				pds.setFilename(rs.getString("filename"));
+				pds.setFilesize(rs.getInt("filesize"));
+				pds.setDescription(rs.getString("description"));
+				list.add(pds);
+			}
+		}catch(Exception e) {
+			System.out.println(e.getMessage());
+			e.printStackTrace();
+		}finally {
+			close();
+		}
+		
+		return list;
 	}
 	
 	
